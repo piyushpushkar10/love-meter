@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Meter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <img class="heart" src="C:\Users\Laxmi\Desktop\Web Development Bootcamp 2022 Udemy\LoveCalculator\heart.png"
+                alt="heart-image">
+            <p>Here is the Love Calculator that lets you calculate love compatibility and your chances of a successful
+                relationship.</p>
+            <h1> Find Love % Between </h1>
+            <div class="inputarea">
+                <input type="text" placeholder="Your Name" id="NameOne" onfocus="this.value = ''">
+                <input type="text" placeholder="Your Lover" id="NameTwo" onfocus="this.value = ''">
+            </div>
+            <a href="#" onclick="love()"> Calculate</a>
+            <p id="print">Your relationship result here</p>
+            <p id="statement"></p>
+        </div>
+    </div>
+    <script>
+        function love() {
+            var name1 = document.getElementById("NameOne").value;
+            var name2 = document.getElementById("NameTwo").value;
+            if (name1.length <= 2) {
+                alert("Enter at least 3 character");
+            }
+            if (name2.length <= 2) {
+                alert("Enter at least 3 character");
+            }
+            else {
+                var random = Math.floor(Math.random() * 100);
+                document.getElementById("print").innerHTML = name1 + " and " + name2 + " have " + random + " % " + " of love with each other";
+            }
+            if (random <= 10 || random <= 50) {
+                document.getElementById("statement").innerHTML = "Good Relationship";
+            }
+            else if (random <= 51 || random <= 100) {
+                document.getElementById("statement").innerHTML = "Lovely Relationship";
+            }
+        }
+    </script>
+</body>
+</html>
